@@ -1,0 +1,1 @@
+App\Providers\WebhookAdapterServiceProvider::class,
