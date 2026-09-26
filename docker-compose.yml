@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   mysql:
     image: mariadb:11
@@ -24,6 +22,7 @@ services:
       mysql:
         condition: service_healthy
     environment:
+      APP_KEY: ${APP_KEY}
       DB_CONNECTION: mysql
       DB_HOST: mysql
       DB_DATABASE: webhooks
@@ -42,6 +41,7 @@ services:
       mysql:
         condition: service_healthy
     environment:
+      APP_KEY: ${APP_KEY}
       DB_CONNECTION: mysql
       DB_HOST: mysql
       DB_DATABASE: webhooks

@@ -1,7 +1,8 @@
 FROM php:8.3-cli
 
 RUN apt-get update && apt-get install -y libzip-dev zip unzip git \
-    && docker-php-ext-install pdo_mysql zip
+    && docker-php-ext-install pdo_mysql zip \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www
 COPY . .
